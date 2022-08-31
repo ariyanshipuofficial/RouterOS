@@ -1,2 +1,4 @@
 # RouterOS
-composer require ariyanshipu/router-os
+
+<pre><code>composer require ariyanshipu/router-os
+</code></pre>
