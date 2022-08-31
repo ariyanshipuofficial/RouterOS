@@ -5,34 +5,17 @@ namespace MikrotikAPI\Commands\IP\Firewall;
 use MikrotikAPI\Talker\Talker,
     MikrotikAPI\Util\SentenceUtil;
 
-/**
- * Description of NAT
- * @author      Ariyan Shipu 
- * @email ariyanshipuoffical@gmail.com 
- * @url <https://github.com/ariyanshipuofficial>
- * @copyright   Copyright (c) 2011, Virtual Think Team.
- * @license     http://opensource.org/licenses/gpl-license.php GNU Public License
- * @category	Libraries
- * 
- */
+
 class FirewallNAT {
 
-    /**
-     *
-     * @var Talker $talker
-     */
+
     private $talker;
 
     function __construct(Talker $talker) {
         $this->talker = $talker;
     }
 
-    /**
-     * This method is used to add the firewall nat
-     * @param type $param array
-     * @return type array
-     * 
-     */
+
     public function add($param) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/nat/add");
@@ -43,12 +26,7 @@ class FirewallNAT {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to disable firewall nat by id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function disable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/nat/disable");
@@ -57,12 +35,7 @@ class FirewallNAT {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to enable firewall nat by id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function enable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/nat/enable");
@@ -71,13 +44,7 @@ class FirewallNAT {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to change firewall nat based on the id
-     * @param type $param array
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function set($param, $id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/nat/set");
@@ -89,12 +56,7 @@ class FirewallNAT {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to remove firewall nat
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function delete($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/nat/remove");
@@ -103,11 +65,7 @@ class FirewallNAT {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to display all firewall nat
-     * @return type array
-     * 
-     */
+
     public function getAll() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/firewall/nat/getall");
@@ -121,13 +79,7 @@ class FirewallNAT {
         }
     }
 
-    /**
-     * This method is used to display one firewall nat 
-     * in detail based on the id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function detail($id) {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/firewall/nat/print");

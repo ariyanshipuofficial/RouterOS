@@ -5,33 +5,17 @@ namespace MikrotikAPI\Commands\IP\Firewall;
 use MikrotikAPI\Talker\Talker,
     MikrotikAPI\Util\SentenceUtil;
 
-/**
- * Description of Filter
- * @author      Ariyan Shipu 
- * @email ariyanshipuoffical@gmail.com 
- * @url <https://github.com/ariyanshipuofficial>
- * @copyright   Copyright (c) 2011, Virtual Think Team.
- * @license     http://opensource.org/licenses/gpl-license.php GNU Public License
- * @category	Libraries
- */
+
 class FirewallFilter {
 
-    /**
-     *
-     * @var Talker $talker
-     */
+
     private $talker;
 
     function __construct(Talker $talker) {
         $this->talker = $talker;
     }
 
-    /**
-     *
-     * @param type $param array
-     * @return type array
-     * This method is used to add the firewall filter
-     */
+
     public function add($param) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/filter/add");
@@ -42,11 +26,7 @@ class FirewallFilter {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to display all firewall filter
-     * @return type array
-     * 
-     */
+
     public function getAll() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/firewall/filter/getall");
@@ -60,12 +40,7 @@ class FirewallFilter {
         }
     }
 
-    /**
-     * This method is used to enable firewall filter by id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function enable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/filter/enable");
@@ -74,12 +49,7 @@ class FirewallFilter {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to disable firewall filter by id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function disable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/filter/disable");
@@ -88,12 +58,7 @@ class FirewallFilter {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to remove firewall filter by id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function delete($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/filter/remove");
@@ -102,13 +67,7 @@ class FirewallFilter {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to change firewall nat based on the id
-     * @param type $param array
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function set($param, $id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/filter/set");
@@ -120,13 +79,7 @@ class FirewallFilter {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to display one firewall filter
-     * in detail based on the id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+
     public function detail($id) {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/firewall/filter/print");

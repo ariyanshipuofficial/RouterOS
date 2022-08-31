@@ -5,33 +5,17 @@ namespace MikrotikAPI\Commands\IP;
 use MikrotikAPI\Talker\Talker,
     MikrotikAPI\Util\SentenceUtil;
 
-/**
- * Description of Mapi_Ip_Dhcp_Server
- *
- * @author      Ariyan Shipu 
- * @email ariyanshipuoffical@gmail.com 
- * @url <https://github.com/ariyanshipuofficial>
- * @copyright   Copyright (c) 2011, Virtual Think Team.
- * @license     http://opensource.org/licenses/gpl-license.php GNU Public License
- * @category	Libraries
- */
+
 class DHCPServer {
 
-    /**
-     *
-     * @var type array
-     */
+
     private $talker;
 
     function __construct(Talker $talker) {
         $this->talker = $talker;
     }
 
-    /**
-     * This methode is used to add ip dhcp server network
-     * @param type $param array
-     * @return type array
-     */
+
     public function addNetwork($param) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/dhcp-server/network/add");
@@ -42,11 +26,7 @@ class DHCPServer {
         return "Sucsess";
     }
 
-    /**
-     * This methode is used to add ip dhcp server
-     * @param type $param array
-     * @return type \array
-     */
+
     public function add($param) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/dhcp-server/add");
@@ -57,11 +37,7 @@ class DHCPServer {
         return "Sucsess";
     }
 
-    /**
-     * This methode is used to set ip dhcp server config
-     * @param type $store_leases_disk string
-     * @return type array
-     */
+
     public function setConfig($store_leases_disk) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/dhcp-server/config/set");
@@ -70,13 +46,7 @@ class DHCPServer {
         return "Sucsess";
     }
 
-    /**
-     * This methode is used to set or edit ip dhcp server network
-     * by id
-     * @param type $param array
-     * @param type $id string
-     * @return type array
-     */
+
     public function setNetwork($param, $id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/dhcp-server/network/set");
@@ -88,10 +58,7 @@ class DHCPServer {
         return "Sucsess";
     }
 
-    /**
-     * This methode is used to display all ip dhcp server network
-     * @return type array
-     */
+
     public function getAllNetwork() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/dhcp-server/network/getall");
@@ -105,11 +72,7 @@ class DHCPServer {
         }
     }
 
-    /**
-     * This methode is used to delete ip dhcp server network by id
-     * @param type $id string
-     * @return type array
-     */
+
     public function deleteNetwork($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/dhcp-server/network/remove");
@@ -118,13 +81,8 @@ class DHCPServer {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to display one ip dhcp server network
-     * in detail based on the id
-     * @param type $id string
-     * @return type array
-     */
-    public function detail($id) {
+
+    public function detailNetwork($id) {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/dhcp-server/network/print");
         $sentence->where(".id", "=", $id);
@@ -138,11 +96,7 @@ class DHCPServer {
         }
     }
 
-    /**
-     * This methode is used to disable ip dhcp server by id
-     * @param type $id string
-     * @return type array
-     */
+
     public function disable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/dhcp-server/disable");
@@ -151,11 +105,7 @@ class DHCPServer {
         return "Sucsess";
     }
 
-    /**
-     * This methode is used to enable ip dhcp server by id
-     * @param type $id string
-     * @return type array
-     */
+
     public function enable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/dhcp-server/enable");
@@ -164,11 +114,7 @@ class DHCPServer {
         return "Sucsess";
     }
 
-    /**
-     * This methode is used to remove ip dhcp server by id
-     * @param type $id string
-     * @return type array
-     */
+
     public function delete($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/dhcp-server/remove");
@@ -177,12 +123,7 @@ class DHCPServer {
         return "Sucsess";
     }
 
-    /**
-     * This methode is used to det or edit ip dhcp server by id
-     * @param type $param array
-     * @param type $id string
-     * @return type array
-     */
+
     public function set($param, $id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/dhcp-server/set");
@@ -194,10 +135,7 @@ class DHCPServer {
         return "Sucsess";
     }
 
-    /**
-     * This methode is used to display all ip dhcp server
-     * @return type array
-     */
+
     public function getAll() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/dhcp-server/getall");
@@ -211,12 +149,7 @@ class DHCPServer {
         }
     }
 
-    /**
-     * This method is used to display one ip dhcp server
-     * in detail based on the id
-     * @param type $id string
-     * @return type  array
-     */
+
     public function detail($id) {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/dhcp-server/print");

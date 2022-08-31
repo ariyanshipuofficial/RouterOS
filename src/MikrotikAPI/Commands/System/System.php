@@ -5,33 +5,17 @@ namespace MikrotikAPI\Commands\System;
 use MikrotikAPI\Util\SentenceUtil,
     MikrotikAPI\Talker\Talker;
 
-/**
- * Description of Mapi_System
- *
- * @author      Ariyan Shipu 
- * @email ariyanshipuoffical@gmail.com 
- * @url <https://github.com/ariyanshipuofficial>
- * @copyright   Copyright (c) 2011, Virtual Think Team.
- * @license     http://opensource.org/licenses/gpl-license.php GNU Public License
- * @category	Libraries
- */
+
 class System {
 
-    /**
-     *
-     * @var type array
-     */
+    
     private $talker;
 
     function __construct(Talker $talker) {
         $this->talker = $talker;
     }
 
-    /**
-     * This method is used to set systemn identity
-     * @param type $name string
-     * @return type array
-     */
+    
     public function set_identity($name) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/system/identity/set");
@@ -40,10 +24,7 @@ class System {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to display all system  identiy
-     * @return type array
-     */
+    
     public function get_all_identity() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/system/identity/getall");
@@ -52,10 +33,7 @@ class System {
         return $rs->getResultArray();
     }
 
-    /**
-     * This method is used to display all system clock
-     * @return type array
-     */
+    
     public function get_all_clock() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/system/clock/getall");
@@ -67,11 +45,7 @@ class System {
         }
     }
 
-    /**
-     * This method is used to system bacup save
-     * @param type $name string
-     * @return type array
-     */
+    
     public function save_backup($name) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/system/backup/save");
@@ -80,11 +54,7 @@ class System {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to system backup load
-     * @param type $name string
-     * @return type array
-     */
+    
     public function load_backup($name) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/system/backup/load");
@@ -93,10 +63,7 @@ class System {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to display all system history
-     * @return type array
-     */
+    
     public function get_all_history() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/system/history/getall");
@@ -110,10 +77,7 @@ class System {
         }
     }
 
-    /**
-     * This method is used to display all system license
-     * @return type array
-     */
+    
     public function get_all_license() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/system/license/getall");
@@ -125,10 +89,7 @@ class System {
         }
     }
 
-    /**
-     * This method is used to display all system routerboard
-     * @return type array
-     */
+    
     public function get_all_routerboard() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/system/routerboard/getall");
@@ -140,13 +101,7 @@ class System {
         }
     }
 
-    /**
-     * This method is used to system reset configuration
-     * @param type $keep_users string (yes or no)
-     * @param type $no_defaults string (yes or no)
-     * @param type $skip_backup string (yes or no)
-     * @return type array
-     */
+    
     public function reset($keep_users, $no_defaults, $skip_backup) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/address/add");

@@ -5,31 +5,17 @@ namespace MikrotikAPI\Commands\IP\Firewall;
 use MikrotikAPI\Talker\Talker,
     MikrotikAPI\Util\SentenceUtil;
 
-/**
- * Description of ServicePort
- * @author      Ariyan Shipu 
- * @email ariyanshipuoffical@gmail.com 
- * @url <https://github.com/ariyanshipuofficial>
- * @copyright   Copyright (c) 2011, Virtual Think Team.
- * @license     http://opensource.org/licenses/gpl-license.php GNU Public License
- * @category	Libraries
- */
+
 class FirewallServicePort {
 
-    /**
-     *
-     * @var Talker $talker
-     */
+
     private $talker;
 
     function __construct(Talker $talker) {
         $this->talker = $talker;
     }
 
-    /**
-     * This method used for get all Ip Firewall Service Port
-     * @return array
-     */
+
     public function getAll() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/firewall/service-port/getall");
@@ -43,11 +29,7 @@ class FirewallServicePort {
         }
     }
 
-    /**
-     * This method used for disable Ip Firewall Service Port
-     * @param type $id string
-     * @return type array
-     */
+
     public function disable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/service-port/disable");
@@ -56,11 +38,7 @@ class FirewallServicePort {
         return "Sucsess";
     }
 
-    /**
-     * This method used for enable Ip Firewall Service Port
-     * @param type $id string
-     * @return type array
-     */
+
     public function enable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/ip/firewall/service-port/enable");
@@ -69,12 +47,7 @@ class FirewallServicePort {
         return "Sucsess";
     }
 
-    /**
-     *
-     * @param type $id string 
-     * @return type array
-     * 
-     */
+
     public function detail($id) {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ip/firewall/service-port/print");

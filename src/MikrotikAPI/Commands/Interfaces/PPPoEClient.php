@@ -5,34 +5,17 @@ namespace MikrotikAPI\Commands\Interfaces;
 use MikrotikAPI\Util\SentenceUtil,
     MikrotikAPI\Talker\Talker;
 
-/**
- * Description of PPPoEClient
- *
- * @author      Ariyan Shipu 
- * @email ariyanshipuoffical@gmail.com 
- * @url <https://github.com/ariyanshipuofficial>
- * @copyright   Copyright (c) 2011, Virtual Think Team.
- * @license     http://opensource.org/licenses/gpl-license.php GNU Public License
- * @category	Libraries
- */
+
 class PPPoEClient {
 
-    /**
-     *
-     * @var type array
-     */
+    
     private $talker;
 
     function __construct(Talker $talker) {
         $this->talker = $talker;
     }
 
-    /**
-     * This method is used to add pppoe-client
-     * @param type $param array
-     * @return type array
-     * 
-     */
+    
     public function add($param) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/interface/pppoe-client/add");
@@ -43,11 +26,7 @@ class PPPoEClient {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to display all pppoe-client 
-     * @return type array
-     * 
-     */
+    
     public function getAll() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/interface/pppoe-client/getall");
@@ -61,12 +40,7 @@ class PPPoEClient {
         }
     }
 
-    /**
-     * This method is used to enable pppoe-client by id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+    
     public function enable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/interface/pppoe-client/enable");
@@ -75,12 +49,7 @@ class PPPoEClient {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to disable pppoe-client by id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+    
     public function disable($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/interface/pppoe-client/disable");
@@ -89,12 +58,7 @@ class PPPoEClient {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to delete pppoe-client by id
-     * @param type $id string
-     * @return type array
-     * 
-     */
+    
     public function delete($id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/interface/pppoe-client/remove");
@@ -103,13 +67,7 @@ class PPPoEClient {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to set or edit by id
-     * @param type $param array
-     * @param type $id string
-     * @return type array
-     * 
-     */
+    
     public function set($param, $id) {
         $sentence = new SentenceUtil();
         $sentence->addCommand("/interface/pppoe-client/set");
@@ -121,12 +79,7 @@ class PPPoEClient {
         return "Sucsess";
     }
 
-    /**
-     * This method is used to display one pppoe-client
-     * in detail based on the id
-     * @param type $id string
-     * @return type array
-     */
+    
     public function detail($id) {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/interface/pppoe-client/print");

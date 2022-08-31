@@ -6,16 +6,7 @@ use MikrotikAPI\Core\StreamReciever,
     MikrotikAPI\Core\StreamSender,
     MikrotikAPI\Util\Util;
 
-/**
- * Description of Connector
- *
- * @author Lalu Erfandi Maula Yusnu nunenuh@gmail.com <http://vthink.web.id>
- * @copyright Copyright (c) 2011, Virtual Think Team.
- * @license http://opensource.org/licenses/gpl-license.php GNU Public License
- * @category Libraries
- * @property StreamSender $sender
- * @property StreamReciever $reciever
- */
+
 class Connector {
 
     private $socket;
@@ -65,26 +56,18 @@ class Connector {
     }
 
     public function connect() {
-        if (socket_connect($this->socket, $this->host, $this->port)) {
-            $this->sendStream("/login");
-            $rec = $this->recieveStream();
-            if (!Util::contains($rec, "!trap") && strlen($rec) > 0) {
-                $word = explode("\n", $rec);
-                if (count($word) > 1) {
-                    $split = explode("=ret=", $word[2]);
-                    $challange = $split[1];
-                    $challanger = $this->challanger($this->username, $this->password, $challange);
-                    $this->sendStream($challanger);
-                    $res = $this->recieveStream();
-                    if (Util::contains($res, "!done") && !Util::contains($res, "!trap")) {
+        if (socket_connect($this->socket, $this->host, $this->port)) { 
+			$login = "/login\n=name=" . $this->username . "\n=password=" . $this->password;
+			$this->sendStream($login);
+            $res = $this->recieveStream();
+			 if (Util::contains($res, "!done") && !Util::contains($res, "!trap")) {
                         $this->login = TRUE;
-                    }
-                }
-            }
-            $this->connected = TRUE;
-        } else {
-            $this->connected = FALSE;
-        }
+						 $this->connected = TRUE;
+                    }else{
+						 $this->connected = FALSE;
+					}
     }
+
+}
 
 }

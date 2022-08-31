@@ -5,16 +5,7 @@ namespace MikrotikAPI\Commands\PPP;
 use MikrotikAPI\Util\SentenceUtil,
     MikrotikAPI\Talker\Talker;
 
-/**
- * Description of Active
- *
- * @author      Ariyan Shipu 
- * @email ariyanshipuoffical@gmail.com 
- * @url <https://github.com/ariyanshipuofficial>
- * @copyright   Copyright (c) 2011, Virtual Think Team.
- * @license     http://opensource.org/licenses/gpl-license.php GNU Public License
- * @category	Libraries
- */
+
 class Active {
 
     private $talker;
@@ -23,10 +14,7 @@ class Active {
         $this->talker = $talker;
     }
 
-    /**
-     * This method is used to display all ppp active
-     * @return type array
-     */
+    
     public function getAll() {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ppp/active/getall");
@@ -34,7 +22,7 @@ class Active {
         $rs = $this->talker->getResult();
         $i = 0;
         return $i < $rs->size() ? $rs->getResultArray() : "No PPP Active To Set, Please Your Add PPP Active";
-     }
+    }
 
     public function detail($name){
         $sentence = new SentenceUtil();
@@ -46,7 +34,7 @@ class Active {
         return $i < $rs->size() ? $rs->getResultArray() : "No PPP Active with name $name found";
     }
     public function deleteById($id) {
-       $sentence = new SentenceUtil();
+        $sentence = new SentenceUtil();
         $sentence->addCommand("/ppp/active/remove");
         $sentence->where(".id", "=", $id);
         $this->talker->send($sentence);
