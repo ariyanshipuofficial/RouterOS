@@ -1,2 +1,2 @@
 # RouterOS
- Mikrotik ROuter Os
+composer require ariyanshipu/router-os
