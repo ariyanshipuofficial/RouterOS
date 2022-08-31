@@ -8,7 +8,9 @@ use MikrotikAPI\Util\SentenceUtil,
 /**
  * Description of Mapi_Interface_Pptp_Server
  *
- * @author      Lalu Erfandi Maula Yusnu nunenuh@gmail.com <http://vthink.web.id>
+ * @author      Ariyan Shipu 
+ * @email ariyanshipuoffical@gmail.com 
+ * @url <https://github.com/ariyanshipuofficial>
  * @copyright   Copyright (c) 2011, Virtual Think Team.
  * @license     http://opensource.org/licenses/gpl-license.php GNU Public License
  * @category	Libraries
