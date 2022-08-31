@@ -2,11 +2,9 @@
  <code>composer require ariyanshipu/router-os</code>
 </pre>
 <br>
-<h4>Example 1: Default Connection</h4>
+<h4>Example: Default Connection</h4>
 <pre>
 <code>
-  <?php
-
     namespace App\Http\Controllers;
     use MikrotikAPI\Talker\Talker;
     use \MikrotikAPI\Entity\Auth;
@@ -21,6 +19,8 @@
             $auth->setHost("10.20.32.1");
             $auth->setUsername("123");
             $auth->setPassword("123");
+            //$auth->setPort("8080"); //if you are already change API Port on your Mikrotik OS please Uncomment $auth->setPort("8080") set your own port
+
             $auth->setDebug(true);
 
 
@@ -42,10 +42,10 @@
 
 </code>
 </pre>
-<h4>Example 1: Default Output</h4>
+<h4>Example: Default Output</h4>
 <pre>
 <code>
-    Array
+Array
 (
     [0] => Array
         (
@@ -113,46 +113,5 @@
         )
 
 )
-</code>
-</pre>
-<h4>Example 2: Default Connection</h4>
-<pre>
-<code>
-  <?php
-
-    namespace App\Http\Controllers;
-    use MikrotikAPI\Talker\Talker;
-    use \MikrotikAPI\Entity\Auth;
-    use MikrotikAPI\Commands\IP\Address;
-    use MikrotikAPI\Util\DebugDumper;
-
-    class DemoController extends Controller
-    {
-        public function index()
-        {
-            $auth = new Auth();
-            $auth->setHost("10.20.32.1");
-            $auth->setUsername("123");
-            $auth->setPassword("123");
-            $auth->setPort("4598");
-            $auth->setDebug(true);
-
-
-            $talker = new Talker($auth);
-            //$filter = new FirewallFilter($talker);
-            //$a = $filter->getAll();
-
-            if($talker)
-            {
-                $ipaddr = new Address($talker);
-                $listIP = $ipaddr->getAll();
-                DebugDumper::dump($listIP);
-            }
-            
-            return view('demo.index');
-
-        }
-    }
-    ?>
 </code>
 </pre>
