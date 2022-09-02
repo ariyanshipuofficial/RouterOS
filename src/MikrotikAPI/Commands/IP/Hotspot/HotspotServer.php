@@ -10,10 +10,10 @@
  * 
  */
 
-namespace Mikrotik\Commands\IP\Hotspot;
+namespace MikrotikAPI\Commands\IP\Hotspot;
 
-use Mikrotik\API\Talker\Talker,
-    Mikrotik\API\Util\SentenceUtil;
+use MikrotikAPI\Talker\Talker,
+    MikrotikAPI\Util\SentenceUtil;
 
 
 class HotspotServer {
