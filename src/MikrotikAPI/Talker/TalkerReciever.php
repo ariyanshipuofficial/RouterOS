@@ -12,11 +12,11 @@
 
 namespace MikrotikAPI\Talker;
 
-use MikrotikAPI\Core\Connector,
-    MikrotikAPI\Util\ResultUtil,
-    MikrotikAPI\Util\Util,
-    MikrotikAPI\Entity\Attribute,
-    MikrotikAPI\Util\DebugDumper;
+use MikrotikAPI\Core\Connector;
+use MikrotikAPI\Util\ResultUtil;
+use MikrotikAPI\Util\Util;
+use MikrotikAPI\Entity\Attribute;
+use MikrotikAPI\Util\DebugDumper;
 
 
 class TalkerReciever {
