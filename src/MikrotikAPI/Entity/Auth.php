@@ -13,7 +13,7 @@
 namespace MikrotikAPI\Entity;
 
 
-class AuthApi {
+class Auth {
 
     
     private $host;

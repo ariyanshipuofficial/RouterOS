@@ -12,7 +12,7 @@
 
 namespace MikrotikAPI\Talker;
 
-use MikrotikAPI\Entity\AuthApi;
+use MikrotikAPI\Entity\Auth;
 use MikrotikAPI\Core\Connector;
 
 
@@ -25,7 +25,7 @@ class Talker {
 
 
 
-    public function __construct(AuthApi $auth) {
+    public function __construct(Auth $auth) {
         $this->auth = $auth;
         $this->connector = new Connector($auth->getHost(), $auth->getPort(), $auth->getUsername(), $auth->getPassword());
         $this->connector->connect();
