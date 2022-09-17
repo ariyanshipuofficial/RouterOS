@@ -109,7 +109,7 @@ class Users {
 
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/user/print");
-        $sentence->where("name", "=", $name);       
+        $sentence->where("?name", "=", $name);       
         $this->talker->send($sentence);
         $rs = $this->talker->getResult();
         $i = 0;
