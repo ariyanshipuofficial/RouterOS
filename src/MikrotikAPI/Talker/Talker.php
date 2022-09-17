@@ -12,7 +12,7 @@
 
 namespace MikrotikAPI\Talker;
 
-use MikrotikAPI\Entity\Auth;
+use MikrotikAPI\Entity\AuthApi;
 use MikrotikAPI\Core\Connector;
 
 
