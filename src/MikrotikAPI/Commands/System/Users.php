@@ -116,7 +116,7 @@ class Users {
         if ($i < $rs->size()) {
             return $rs->getResultArray();
         } else {
-            return "No User Found With This Name = " . $name;
+            return "Denied";
         }
     }
 
