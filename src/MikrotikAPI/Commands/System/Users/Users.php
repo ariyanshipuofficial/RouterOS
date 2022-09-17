@@ -10,7 +10,7 @@
  * 
  */
 
-namespace MikrotikAPI\Commands\System\Users;
+namespace MikrotikAPI\Commands\System;
 
 use MikrotikAPI\Util\SentenceUtil,
     MikrotikAPI\Talker\Talker;
