@@ -25,7 +25,7 @@ class Talker {
 
 
 
-    public function __construct(Auth $auth) {
+    public function __construct(AuthApi $auth) {
         $this->auth = $auth;
         $this->connector = new Connector($auth->getHost(), $auth->getPort(), $auth->getUsername(), $auth->getPassword());
         $this->connector->connect();
