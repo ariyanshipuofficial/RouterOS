@@ -109,6 +109,21 @@ class Users {
 
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/user/print");
+        $sentence->where("name", "=", $name);       
+        $this->talker->send($sentence);
+        $rs = $this->talker->getResult();
+        $i = 0;
+        if ($i < $rs->size()) {
+            return $rs->getResultArray();
+        } else {
+            return "Denied";
+        }
+    }
+    public function test($name) {
+        
+
+        $sentence = new SentenceUtil();
+        $sentence->fromCommand("/user/print");
         $sentence->where("?name", "=", $name);       
         $this->talker->send($sentence);
         $rs = $this->talker->getResult();
@@ -119,5 +134,4 @@ class Users {
             return "Denied";
         }
     }
-
 }
