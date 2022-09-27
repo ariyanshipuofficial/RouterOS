@@ -35,6 +35,16 @@ class HotspotActive {
         return "Sucsess";
     }
 
+    public function login($param) {
+        $sentence = new SentenceUtil();
+        $sentence->addCommand("/ip/hotspot/active/login");
+        foreach ($param as $name => $value) {
+            $sentence->setAttribute($name, $value);
+        }
+        $this->talker->send($sentence);
+        return "Sucsess";
+    }
+
 
     public function delete($id) {
         $sentence = new SentenceUtil();
