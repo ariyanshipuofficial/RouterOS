@@ -104,4 +104,18 @@ class Secret {
         }
     }
 
+    public function get_id($username) {
+        $sentence = new SentenceUtil();
+        $sentence->fromCommand("/ppp/secret/print");
+        $sentence->where("name", "=", $username);
+        $this->talker->send($sentence);
+        $rs = $this->talker->getResult();
+        $i = 0;
+        if ($i < $rs->size()) {
+            return $rs->getResultArray();
+        } else {
+            return "No PPP Secret With This id = " . $username;
+        }
+    }
+
 }
