@@ -118,7 +118,7 @@ class Secret {
         }
     }
 
-    public function profile($profile) {
+    public function get_profile($profile) {
         $sentence = new SentenceUtil();
         $sentence->fromCommand("/ppp/secret/print");
         $sentence->where("profile", "=", $profile);
