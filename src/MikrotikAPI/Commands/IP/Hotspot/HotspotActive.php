@@ -83,6 +83,18 @@ class HotspotActive {
         }
     }
 
-    
+    public function get_active($user) {
+        $sentence = new SentenceUtil();
+        $sentence->fromCommand("/ip/hotspot/active/print");
+        $sentence->where("user", "=", $user);
+        $this->talker->send($sentence);
+        $rs = $this->talker->getResult();
+        $i = 0;
+        if ($i < $rs->size()) {
+            return $rs->getResultArray();
+        } else {
+            return "No IP Hotspot Active With This id = " . $user;
+        }
+    }
 
 }
