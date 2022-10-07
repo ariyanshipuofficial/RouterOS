@@ -113,4 +113,17 @@ class HotspotUsers {
         }
     }
 
+    public function get_id($name) {
+        $sentence = new SentenceUtil();
+        $sentence->fromCommand("/ip/hotspot/user/print");
+        $sentence->where("name", "=", $name);
+        $this->talker->send($sentence);
+        $rs = $this->talker->getResult();
+        $i = 0;
+        if ($i < $rs->size()) {
+            return $rs->getResultArray();
+        } else {
+            return "No IP Hotspot User With This id = " . $name;
+        }
+    }
 }
